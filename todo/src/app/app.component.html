@@ -1,0 +1,16 @@
+<main class="main">
+  <div class="content">
+    <div class="main">
+      <h1>{{ title }}</h1>
+      <h2>What would you like to do today?</h2>
+      <div class="addItemForm">
+        <input #newItem placeholder="Add item" type="text" (keyUp.enter)="addItem(newItem.value); newItem.value =''"
+          name="description" class="lg-text-input" id="addItemInput" />
+        <button class="btn-primary" (click)="addItem(newItem.value)">Add</button>
+      </div>
+      <ul>
+        <li *ngFor="let item of items">{{item.description}}</li>
+      </ul>
+    </div>
+  </div>
+</main>
